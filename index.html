@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CashReward App</title>
 
-    <script src='//libtl.com/sdk.js' data-zone='9391539' data-sdk='show_9391539'></script>
+    <script src='//libtl.com/sdk.js' data-zone='10073859' data-sdk='show_10073859'></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -579,10 +579,10 @@
         const userRef = doc(db, "users", currentUser.uid);
         if (userData.lastAdWatchDate !== today) { await updateDoc(userRef, { dailyAdCount: 0, lastAdWatchDate: today }); userData.dailyAdCount = 0; userData.lastAdWatchDate = today; }
         if (userData.dailyAdCount >= appConfig.dailyAdLimit) return showAlert("You've reached your daily ad limit.");
-        if (typeof window.show_9391539 !== 'function') return showAlert("Ad service not available.");
+        if (typeof window.show_10073859 !== 'function') return showAlert("Ad service not available.");
         let adPromise;
         switch(taskType) {
-            case 'interstitial': adPromise = window.show_9391539(); break; case 'popup': adPromise = window.show_9391539('pop'); break; case 'inApp': adPromise = window.show_9391539({ type: 'inApp' }); break; case 'miniApp': adPromise = window.show_9391539(); break; default: return;
+            case 'interstitial': adPromise = window.show_10073859(); break; case 'popup': adPromise = window.show_10073859('pop'); break; case 'inApp': adPromise = window.show_10073859({ type: 'inApp' }); break; case 'miniApp': adPromise = window.show_10073859(); break; default: return;
         }
         adPromise.then(async () => {
             const newCount = (userData.dailyAdCount || 0) + 1;
@@ -705,13 +705,13 @@
             return showAlert("You have used all your ad spins for today.");
         }
 
-        if (typeof window.show_9391539 !== 'function') return showAlert("Ad service not available.");
+        if (typeof window.show_10073859 !== 'function') return showAlert("Ad service not available.");
         
         const adSpinBtnHtml = elementCache.adSpinBtn.innerHTML;
         elementCache.adSpinBtn.innerHTML = `Loading Ad...`; 
         elementCache.adSpinBtn.disabled = true;
         
-        window.show_9391539().then(() => {
+        window.show_10073859().then(() => {
             performSpin(true);
         }).catch(e => {
             showAlert('Could not show ad.');
@@ -788,7 +788,7 @@
         buttonElement.disabled = true;
         buttonElement.innerHTML = 'Loading Ad...';
 
-        if (typeof window.show_9391539 !== 'function') {
+        if (typeof window.show_10073859 !== 'function') {
              showAlert("Ad service not available.");
              buttonElement.innerHTML = 'Visit';
              buttonElement.disabled = false;
@@ -796,7 +796,7 @@
         }
 
         // ১. অ্যাড দেখান। এটি একটি প্রমিজ রিটার্ন করে।
-        window.show_9391539()
+        window.show_10073859()
             .then(() => {
                 // ২. অ্যাড সফলভাবে বন্ধ করা হয়েছে। এখন লিংক ওপেন করুন।
                 try {
@@ -854,11 +854,11 @@
 
     // --- Utility & Helper Functions ---
 
-    const BOT_USERNAME = "Earnrain_bot"; // ⚠️⚠️⚠️ এখানে আপনার বটের ইউজারনেম দিন ⚠️⚠️⚠️
+    const BOT_USERNAME = "PixelPayv_bot"; // ⚠️⚠️⚠️ এখানে আপনার বটের ইউজারনেম দিন ⚠️⚠️⚠️
 
     function getReferralLink() {
         if (!currentUser) return null;
-        return `https://t.me/${BOT_USERNAME}?startapp=${currentUser.uid}`;
+        return `https://t.me/${BOT_USERNAME}/app?startapp=${currentUser.uid}`;
     }
 
     function copyReferralLink() {
