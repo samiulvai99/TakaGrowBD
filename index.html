@@ -217,14 +217,14 @@
 <script type="module">
     // --- Firebase Initialization ---
     const firebaseConfig = {
-        apiKey: "AIzaSyBpmI-HJl3so1cPkIbuzjDQawy9xx6ekOs",
-        authDomain: "daraz-bot-c434f.firebaseapp.com",
-        databaseURL: "https://daraz-bot-c434f-default-rtdb.firebaseio.com",
-        projectId: "daraz-bot-c434f",
-        storageBucket: "daraz-bot-c434f.firebasestorage.app",
-        messagingSenderId: "597917087371/",
-        appId: "1:597917087371:web:c7448fe5a12d8bf455468e",
-        measurementId: "G-8FX6E89DQ9"
+        apiKey: "AIzaSyBDotOOjNOn-ocA5PCJ0qk28DR1rLxB4vo",
+        authDomain: "philadelphia-955e1.firebaseapp.com",
+        databaseURL: "https://philadelphia-955e1-default-rtdb.firebaseio.com",
+        projectId: "philadelphia-955e1",
+        storageBucket: "philadelphia-955e1.firebasestorage.app",
+        messagingSenderId: "462560675425/",
+        appId: "1:462560675425:web:ea4cb61b2b26ddf30e8c20",
+        measurementId: "G-YS0H89Q868"
     };
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
     import { getFirestore, doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, query, where, getDocs, orderBy, limit, increment } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
@@ -353,7 +353,7 @@
             else {
                 const ownReferralCode = Math.random().toString(36).substring(2, 8).toUpperCase();
                 
-                let bonus = 0.5; // ডিফল্ট বোনাস এখন টাকা
+                let bonus = 20; // ডিফল্ট বোনাস এখন টাকা
                 let referredBy = null;
                 const bonusAmount = appConfig.referralBonus || 1; // ডিফল্ট ১ টাকা
 
