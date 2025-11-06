@@ -546,7 +546,7 @@
         const userReferrals = userData.successfulReferrals || 0;
         const requiredReferrals = appConfig.minReferrals || 0;
         if (userReferrals < requiredReferrals) {
-            return showAlert(`You need at least ${requiredReferrals} successful referrals to withdraw. You currently have ${userReferrals} referral.`);
+            return showAlert(`withdraw করতে আপনাকে ${requiredReferrals} টা সফল রেফার করতে হবে। আপনার বর্তমান ${userReferrals} টা রেফার আছে.`);
         }
 
         elementCache.loader.style.display = 'flex';
